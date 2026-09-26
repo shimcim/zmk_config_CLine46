@@ -84,6 +84,13 @@
     };
 };
 
+// Default for DYA Studio's temporary layer setting.
+// Source: https://github.com/cormoran/zmk-module-runtime-input-processor/blob/zmk-v0.4.0.0/README.md#temp-layer-layer
+&mouse_runtime_input_processor {
+    temp-layer-enabled;
+    temp-layer = <2>;
+};
+
 // スクロール用のランタイム入力プロセッサ。
 //
 // 従来の <&zip_scroll_scaler 1 8> を置き換えたもの。scaler は再ビルドしないと
