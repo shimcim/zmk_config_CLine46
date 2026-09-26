@@ -27,6 +27,19 @@
         };
     };
 
+    // Compile-time default for the editable DYA Studio combo slot.
+    // Source: https://github.com/cormoran/zmk-feature-runtime-combo/blob/d9490e7b5d41c516221d131241009e81740efcee/README.md#compile-time-default-combos
+    runtime_combo_defaults {
+        compatible = "cormoran,runtime-combo-defaults";
+
+        kana {
+            slot = <0>;
+            key-positions = <42 43>;
+            bindings = <&kp LANG1>;
+            display-name = "KANA";
+        };
+    };
+
     macros {
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
