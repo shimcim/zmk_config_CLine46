@@ -35,7 +35,7 @@ manifest:
       revision: 78f86df9e6c5edaf57bef3ccbd7f360cfdf49291
     - name: zmk-module-runtime-input-processor
       remote: cormoran
-      revision: zmk-v0.4.0.0
+      revision: 52fcd040a18fd3b661a0565a997cf76d02594df0
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       # main @ 2026-07-05 (zmk-v0.4.0.0 tag not published yet for this module)
@@ -84,12 +84,12 @@ manifest:
     #その他のモジュール
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: main
+      revision: 44b4a76b74d293a93cec4ccb7e04cb8d29c10f93
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
+      revision: e6b467792a1dabef8cfa5c9fd26bfefc9c16662b
     - name: zmk-feature-non-lipo-battery-management
       remote: takamaru-fpv
-      revision: voltage_division
+      revision: fa7e8888021bcc62dbc288dc2efe4b2bc3071d1f
   self:
     path: config
