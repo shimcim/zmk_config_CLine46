@@ -52,70 +52,104 @@
 
         default_layer {
             bindings = <
-&kp TAB      &kp Q     &kp W      &kp E     &kp R                &kp T                                            &kp Y     &kp U   &kp I       &kp O          &kp P       &kp LEFT_BRACKET
-&kp LCTRL    &kp A     &kp S      &kp D     &kp F                &kp G                                            &kp H     &kp J   &kp K       &kp L          &kp MINUS   &kp RIGHT_BRACKET
-&kp LSHIFT   &kp Z     &kp X      &kp C     &kp V                &kp B                                            &kp N     &kp M   &kp COMMA   &kp DOT        &mo 3       &kp RSHIFT
-             &kp ESC   &kp LGUI   &kp LALT  &lt 2 INT_MUHENKAN   &lt 1 SPACE   &mt LSFT INT_HENKAN      &kp RET   &kp BSPC                      &kp NUMBER_9   &kp DEL  
+&kp TAB                    &kp Q    &kp W           &kp E          &kp R                &kp T               &kp Y         &kp U      &kp I       &kp O         &kp P       &lt 8 BACKSPACE
+&mt LEFT_CONTROL ESCAPE    &kp A    &kp S           &kp D          &kp F                &kp G               &kp H         &kp J      &kp K       &kp L         &lt 3 SEMICOLON    &kp SQT
+&kp LEFT_SHIFT             &kp Z    &kp X           &kp C          &kp V                &kp B               &kp N         &kp M      &kp COMMA   &kp PERIOD    &kp SLASH   &kp INT1
+                           &kp ESCAPE    &mo 5    &kp 1074200800    &kp LEFT_ALT    &mt LEFT_GUI LANG2    &lt 1 SPACE    &lt 4 SPACE    &lt 1 RETURN    &none    &none
             >;
         };
 
-        
         layer_1 {
             bindings = <
-&kp CARET   &kp EQUAL      &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9   &kp AT_SIGN                            &kp LEFT_PARENTHESIS    &kp DOUBLE_QUOTES   &kp RIGHT_PARENTHESIS   &kp SEMI    &kp EXCLAMATION   &kp QMARK
-&kp MINUS   &kp PLUS       &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6   &kp HASH                               &kp LEFT_BRACKET        &kp SINGLE_QUOTE    &kp RIGHT_BRACKET       &kp COLON   &kp AMPERSAND     &kp PIPE
-&kp SLASH   &kp ASTERISK   &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3   &kp UNDERSCORE                         &kp SLASH               &kp BACKSLASH       &kp COMMA               &kp DOT     &kp DOLLAR        &kp PERCENT
-            &kp ESC        &kp NUMBER_0   &kp DOT        &trans         &trans           &trans      &kp RET   &kp BSPC                                                            &kp DEL     &trans 
+&kp GRAVE    &kp 34013214    &kp 34013215    &kp 34013216    &kp 34013217    &kp 34013218    &kp 34013219    &kp 34013220    &kp 34013221    &kp 34013222    &kp 34013223    &kp BACKSPACE
+&none        &kp C_BRI_DN    &kp C_BRI_UP    &kp C_PREVIOUS    &kp C_PLAY_PAUSE    &kp C_NEXT    &kp MINUS    &kp EQUAL    &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp NON_US_HASH    &kp INT3
+&trans       &none    &none    &kp C_MUTE    &kp C_VOLUME_DOWN    &kp C_VOLUME_UP    &kp COMMA    &kp PERIOD    &kp SEMICOLON    &kp SQT    &kp SLASH    &none
+             &none    &none    &none    &trans    &trans    &trans    &trans    &none    &none    &none
             >;
         };
-
 
         MOUSE {
             bindings = <
-&trans   &trans   &kp F7   &kp F8   &kp F9   &kp F10                         &kp LC(Y)   &kp LC(C)        &kp LC(V)        &kp LC(X)         &kp LC(P)   &trans
-&trans   &trans   &kp F4   &kp F5   &kp F6   &kp F11                         &kp LC(Z)   &mkp MB1         &kp UP_ARROW     &mkp MB2          &kp LC(F)   &trans
-&trans   &trans   &kp F1   &kp F2   &kp F3   &kp F12                         &kp LC(A)   &kp LEFT_ARROW   &kp DOWN_ARROW   &kp RIGHT_ARROW   &trans      &trans
-         &trans   &trans   &trans   &trans   &trans    &trans      &kp RET   &kp BSPC                                      &kp HOME          &kp END
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &mkp MB4    &mkp MB5    &mkp MB3    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &mkp MB1    &mkp MB2    &trans      &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &kp 17236048    &kp 17236049    &kp 17236050    &kp 17236047    &trans    &trans
+          &trans    &trans    &trans    &trans    &kp LEFT_GUI    &trans    &trans    &trans    &trans    &trans
             >;
         };
-
 
         SCROLL {
             bindings = <
-&bt BT_CLR       &trans   &trans         &trans         &trans         &trans                                &trans   &trans   &trans   &trans   &trans   &trans
-&bt BT_CLR_ALL   &trans   &bt BT_SEL 4   &trans         &trans         &trans                                &trans   &trans   &trans   &trans   &trans   &trans
-&trans           &trans   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &trans                                &trans   &trans   &trans   &trans   &trans   &trans
-                 &trans   &bt BT_SEL 0   &trans         &trans         &trans   &trans      &studio_unlock   &trans                     &trans   &trans  
+&bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans    &trans    &trans    &trans    &trans    &trans
+&bt BT_CLR_ALL    &trans          &trans          &trans          &trans          &trans          &trans    &trans    &trans    &trans    &trans    &trans
+&trans            &trans          &trans          &trans          &trans          &trans          &trans    &trans    &trans    &trans    &trans    &trans
+                  &studio_unlock    &trans    &trans    &trans    &trans    &trans    &studio_unlock    &trans    &trans    &trans
             >;
         };
-
 
         layer_4 {
             bindings = <
-&trans   &trans   &trans         &trans         &trans         &trans                        &trans   &trans   &trans   &trans   &trans   &trans
-&trans   &trans   &bt BT_SEL 4   &trans         &trans         &trans                        &trans   &trans   &trans   &trans   &trans   &trans
-&trans   &trans   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &trans                        &trans   &trans   &trans   &trans   &trans   &trans
-         &trans   &bt BT_SEL 0   &trans         &trans         &trans   &trans      &trans   &trans                     &trans   &trans 
+&kp 34013237    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6       &kp N7       &kp N8         &kp N9          &kp N0             &trans
+&trans          &trans    &trans    &trans    &trans    &trans    &kp LEFT     &kp DOWN     &kp UP         &kp RIGHT       &kp ESCAPE         &kp KP_EQUAL
+&trans          &trans    &trans    &trans    &trans    &trans    &kp COMMA    &kp KP_DOT   &kp KP_PLUS    &kp KP_MINUS    &kp KP_ASTERISK    &kp KP_FSLH
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
-
 
         layer_5 {
             bindings = <
-&trans   &trans   &trans   &trans   &trans   &trans                        &trans   &trans   &trans   &trans   &trans   &trans
-&trans   &trans   &trans   &trans   &trans   &trans                        &trans   &trans   &trans   &trans   &trans   &trans
-&trans   &trans   &trans   &trans   &trans   &trans                        &trans   &trans   &trans   &trans   &trans   &trans
-         &trans   &trans   &trans   &trans   &trans   &trans      &trans   &trans                     &trans   &trans       
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &kp 134676488    &kp 134676487
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans          &kp 185008161
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans          &trans
+          &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
 
-
         layer_6 {
             bindings = <
-&trans   &trans   &trans   &trans   &trans   &trans                        &trans   &trans   &trans   &trans   &trans   &trans
-&trans   &trans   &trans   &trans   &trans   &trans                        &trans   &trans   &trans   &trans   &trans   &trans
-&trans   &trans   &trans   &trans   &trans   &trans                        &trans   &trans   &trans   &trans   &trans   &trans
-         &trans   &trans   &trans   &trans   &trans   &trans      &trans   &trans                     &trans   &trans 
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+          &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+            >;
+        };
+
+        gesture1_layer {
+            display-name = "GESTURE1";
+            bindings = <
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+          &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+            >;
+        };
+
+        gesture2_layer {
+            display-name = "GESTURE2";
+            bindings = <
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+          &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+            >;
+        };
+
+        gesture3_layer {
+            display-name = "GESTURE3";
+            bindings = <
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+          &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+            >;
+        };
+
+        gesture4_layer {
+            display-name = "GESTURE4";
+            bindings = <
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
+          &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
     };
