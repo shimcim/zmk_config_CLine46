@@ -11,19 +11,26 @@ jobs:
       image: zmkfirmware/zmk-build-arm:stable
     steps:
       - uses: actions/checkout@v4
-      - name: Prepare build directory
-        run: echo "build_dir=$(mktemp -d)" >> "$GITHUB_ENV"
+      - name: Prepare isolated config and build directories
+        run: |
+          echo "build_dir=$(mktemp -d)" >> "$GITHUB_ENV"
+          echo "base_dir=${TMPDIR:-/tmp}/zmk-config" >> "$GITHUB_ENV"
+          mkdir -p "${TMPDIR:-/tmp}/zmk-config/config"
+          cp -R config/* "${TMPDIR:-/tmp}/zmk-config/config/"
       - name: Fetch pinned sources
         run: |
-          west init -l config
+          cd "$base_dir"
+          west init -l "$base_dir/config"
           west update --fetch-opt=--filter=tree:0
           west zephyr-export
       - name: Rebuild right half without firmware changes
         run: |
+          cd "$base_dir"
           west build -s zmk/app -d "$build_dir" -b xiao_ble//zmk \
             -S studio-rpc-usb-uart -- \
-            -DZMK_CONFIG="$GITHUB_WORKSPACE/config" \
-            '-DSHIELD=CLine46_R rgbled_adapter'
+            -DZMK_CONFIG="$base_dir/config" \
+            '-DSHIELD=CLine46_R rgbled_adapter' \
+            -DZMK_EXTRA_MODULES="$GITHUB_WORKSPACE"
       - name: Upload address mapping files
         uses: actions/upload-artifact@v4
         with:
