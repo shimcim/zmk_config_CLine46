@@ -3,3 +3,33 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+
+  diagnose-right:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:stable
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare build directory
+        run: echo "build_dir=$(mktemp -d)" >> "$GITHUB_ENV"
+      - name: Fetch pinned sources
+        run: |
+          west init -l config
+          west update --fetch-opt=--filter=tree:0
+          west zephyr-export
+      - name: Rebuild right half without firmware changes
+        run: |
+          west build -s zmk/app -d "$build_dir" -b xiao_ble//zmk \
+            -S studio-rpc-usb-uart -- \
+            -DZMK_CONFIG="$GITHUB_WORKSPACE/config" \
+            '-DSHIELD=CLine46_R rgbled_adapter'
+      - name: Upload address mapping files
+        uses: actions/upload-artifact@v4
+        with:
+          name: right-address-map
+          if-no-files-found: error
+          path: |
+            ${{ env.build_dir }}/zephyr/zephyr.elf
+            ${{ env.build_dir }}/zephyr/zephyr.map
+            ${{ env.build_dir }}/zephyr/zmk.uf2
